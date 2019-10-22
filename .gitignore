@@ -1,0 +1,12 @@
+/*
+/*/
+
+!.gitignore
+!/Assets/
+/Assets/*
+!/[Aa]ssets/**/*.meta
+!/Assets/Scenes
+!/Assets/Scripts
+!/Logs/
+!/Packages/
+!/ProjectSettings/
