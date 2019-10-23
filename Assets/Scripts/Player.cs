@@ -8,7 +8,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // movement scale
-    public float movementSpeed = 1f;
+    public float movementSpeed = 3f;
 
     // enables physics
     Rigidbody2D rb;
@@ -24,6 +24,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //transform.position -= transform.up * Time.deltaTime;
+        if (transform.position.x <= -0.68f)
+        {
+            transform.position = new Vector2(-0.68f, transform.position.y);
+        }
+        else if (transform.position.x >= 0.638f)
+        {
+            transform.position = new Vector2(0.638f, transform.position.y);
+        }
         movement = Input.GetAxis("Horizontal") * movementSpeed;
         //if (Input.touchCount > 0)
         //{
