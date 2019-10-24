@@ -4,7 +4,7 @@ using UnityEngine;
 
 /* Destroys all previously spawned platforms.
  */
-public class Destroy : MonoBehaviour
+public class DestroyAsteroid : MonoBehaviour
 {
     //public GameObject player;
     public GameObject platformPrefab;
@@ -36,6 +36,6 @@ public class Destroy : MonoBehaviour
         Vector2 position = new Vector2(Random.Range(-0.521f, 0.521f), y - Random.Range(2.4f, 2.6f));
         newPlatform = Instantiate(platformPrefab, position, Quaternion.identity);
         Destroy(collider.gameObject);
-        Debug.Log("break");
+        Debug.Log("asteroid");
     }
 }
