@@ -7,8 +7,10 @@ using UnityEngine;
 public class DestroyAsteroid : MonoBehaviour
 {
     //public GameObject player;
-    public GameObject platformPrefab;
-    private GameObject newPlatform;
+    public GameObject groundPrefab;
+    public GameObject icePrefab;
+    public GameObject bubblePrefab;
+    public GameObject leafPrefab;
 
     // speed and height for moving asteroid
     float speed = 5f;
@@ -34,7 +36,22 @@ public class DestroyAsteroid : MonoBehaviour
         float x = collider.transform.position.x;
         float y = collider.transform.position.y;
         Vector2 position = new Vector2(Random.Range(-0.521f, 0.521f), y - Random.Range(2.4f, 2.6f));
-        newPlatform = Instantiate(platformPrefab, position, Quaternion.identity);
+        float p = Random.Range(0f, 1f);
+        GameObject newPrefab;
+        if (p < 1f)
+        {
+            newPrefab = icePrefab;
+        } else if (0.6f <= p && p < 0.75f)
+        {
+            newPrefab = icePrefab;
+        } else if (0.75f <= p && p < 0.9f)
+        {
+            newPrefab = bubblePrefab;
+        } else
+        {
+            newPrefab = leafPrefab;
+        }
+        Instantiate(newPrefab, position, Quaternion.identity);
         Destroy(collider.gameObject);
         Debug.Log("asteroid");
     }

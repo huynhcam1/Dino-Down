@@ -8,7 +8,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // movement scale
-    public float movementSpeed = 3f;
+    public float movementSpeed = 1f;
 
     // enables physics
     Rigidbody2D rb;
@@ -34,13 +34,18 @@ public class Player : MonoBehaviour
             transform.position = new Vector2(0.638f, transform.position.y);
         }
         movement = Input.GetAxis("Horizontal") * movementSpeed;
-        //if (Input.touchCount > 0)
-        //{
-        //    Touch touch = Input.GetTouch(0);
-        //    Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-        //    touchPosition.z = 0f;
-        //    transform.position = touchPosition;
-        //}
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            if (touchPosition.x < 0f)
+            {
+                movement = -movementSpeed;
+            } else if (touchPosition.x > 0f)
+            {
+                movement = movementSpeed;
+            }
+        }
     }
 
     // movement
