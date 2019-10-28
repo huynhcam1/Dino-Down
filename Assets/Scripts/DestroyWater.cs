@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyWater : MonoBehaviour
 {
-    public GameObject player;
     public ScoreManager scoreManager;
 
     // Start is called before the first frame update
@@ -20,12 +20,13 @@ public class DestroyWater : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider == player.GetComponent("BoxCollider2D"))
+        // ends game if player enters water collider
+        if (collider.gameObject.tag == "Player")
         {
             scoreManager.isAlive = false;
             Destroy(collider.gameObject);
-            Debug.Log("water");
-            // end game here
+            Debug.Log("game over");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         
     }

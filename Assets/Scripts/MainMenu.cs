@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        // go to next scene
+        // go to next scene (game scene)
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

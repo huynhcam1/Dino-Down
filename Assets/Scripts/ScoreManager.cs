@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    // score display
     public Text score;
 
+    // current score and update value
     public float count;
     public float pointsPerSecond;
 
+    // check if player still alive, freeze score if not
     public bool isAlive = true;
 
     // Start is called before the first frame update
@@ -21,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if character is alive, update current score (rounded)
         if (isAlive)
         {
             count += pointsPerSecond * Time.deltaTime;

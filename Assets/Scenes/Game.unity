@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &259338763
 Animator:
   serializedVersion: 3
@@ -362,7 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a94a6a9cf00c0d4e88cddad9683447e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1436603426}
   scoreManager: {fileID: 1579598164}
 --- !u!1 &519420028
 GameObject:
@@ -983,6 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1
+  animator: {fileID: 1436603429}
 --- !u!50 &1436603431
 Rigidbody2D:
   serializedVersion: 4
@@ -1225,7 +1225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3baa5b0e420ab064ba486a9d6dddaacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefab: {fileID: 150527528508510580, guid: f7112d5acaeba9c4a8d3378136ba4230,
+  scoreManager: {fileID: 1579598164}
+  groundPrefab: {fileID: 5256359867827897918, guid: f7112d5acaeba9c4a8d3378136ba4230,
     type: 3}
   icePrefab: {fileID: 7810199907557744473, guid: 362e178585695554a858abe8bf7edb93,
     type: 3}
