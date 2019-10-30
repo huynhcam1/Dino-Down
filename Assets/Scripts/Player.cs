@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
     // allows for animation switch depending on action
     public Animator animator;
 
+    // movement is player movement, horizontal is acceleration of movement
     float movement = 0f;
+    float horizontal = 0f;
 
     // Use this for initialization
     void Start()
@@ -41,17 +43,13 @@ public class Player : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            if (touchPosition.x < 0f)
-            {
-                movement = -movementSpeed;
-            } else if (touchPosition.x > 0f)
-            {
-                movement = movementSpeed;
-            }
+            TouchInputGetAxis(touchPosition);
+            movement = horizontal * movementSpeed;
         }
-        // movement with keyboard, used for debugging without phone
+        // movement with keyboard, used for debugging without mobile
         else
         {
+            Debug.Log(Input.GetAxis("Horizontal"));
             movement = Input.GetAxis("Horizontal") * movementSpeed;
         }
         // switch to run animation if moving on platforms only (if falling does not switch)
@@ -82,5 +80,41 @@ public class Player : MonoBehaviour
         Vector2 velocity = rb.velocity;
         velocity.x = movement;
         rb.velocity = velocity;
+    }
+
+    // function to imitate Input.GetAxis("Horizontal"), but for touch movement instead of keyboard
+    // note to self: friction automatically slows down player
+    void TouchInputGetAxis(Vector2 touchPosition)
+    {
+        if (touchPosition.x < 0f)
+        {
+            if (this.horizontal < 0f)
+            {
+                this.horizontal -= Random.Range(0.08f, 0.15f);
+                this.horizontal = Mathf.Max(this.horizontal, -1f);
+                Debug.Log(horizontal);
+            }
+            else
+            {
+                this.horizontal = 0;
+                this.horizontal -= Random.Range(0.08f, 0.15f);
+                Debug.Log(horizontal);
+            }
+        }
+        else if (touchPosition.x > 0f)
+        {
+            if (this.horizontal > 0f)
+            {
+                this.horizontal += Random.Range(0.08f, 0.15f);
+                this.horizontal = Mathf.Min(this.horizontal, 1f);
+                Debug.Log(horizontal);
+            }
+            else
+            {
+                this.horizontal = 0;
+                this.horizontal += Random.Range(0.08f, 0.15f);
+                Debug.Log(horizontal);
+            }
+        }
     }
 }
