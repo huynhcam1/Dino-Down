@@ -10,9 +10,9 @@ public class DestroyAsteroid : MonoBehaviour
     public ScoreManager scoreManager;
 
     // different platforms
+    public GameObject bubblePrefab;
     public GameObject groundPrefab;
     public GameObject icePrefab;
-    public GameObject bubblePrefab;
     public GameObject leafPrefab;
 
     // speed and height for moving asteroid
@@ -34,19 +34,19 @@ public class DestroyAsteroid : MonoBehaviour
         transform.position = new Vector2(position.x, newY);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collison)
     {
         // ends game if player enters asteroid collider
-        if (collider.gameObject.tag == "Player")
+        if (collison.gameObject.tag == "Player")
         {
             scoreManager.isAlive = false;
-            Destroy(collider.gameObject);
+            Destroy(collison.gameObject);
             Debug.Log("game over");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         // generate new platforms, then destroy old platform
-        float x = collider.transform.position.x;
-        float y = collider.transform.position.y;
+        float x = collison.transform.position.x;
+        float y = collison.transform.position.y;
         Vector2 position = new Vector2(Random.Range(-0.521f, 0.521f), y - Random.Range(2.4f, 2.6f));
         float p = Random.Range(0f, 1f);
         GameObject newPrefab;
@@ -64,7 +64,7 @@ public class DestroyAsteroid : MonoBehaviour
             newPrefab = leafPrefab;
         }
         Instantiate(newPrefab, position, Quaternion.identity);
-        Destroy(collider.gameObject);
+        Destroy(collison.gameObject);
         Debug.Log("asteroid");
     }
 }

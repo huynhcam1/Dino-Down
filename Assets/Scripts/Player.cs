@@ -49,7 +49,6 @@ public class Player : MonoBehaviour
         // movement with keyboard, used for debugging without mobile
         else
         {
-            Debug.Log(Input.GetAxis("Horizontal"));
             movement = Input.GetAxis("Horizontal") * movementSpeed;
         }
         // switch to run animation if moving on platforms only (if falling does not switch)
@@ -92,13 +91,11 @@ public class Player : MonoBehaviour
             {
                 this.horizontal -= Random.Range(0.08f, 0.15f);
                 this.horizontal = Mathf.Max(this.horizontal, -1f);
-                Debug.Log(horizontal);
             }
             else
             {
                 this.horizontal = 0;
                 this.horizontal -= Random.Range(0.08f, 0.15f);
-                Debug.Log(horizontal);
             }
         }
         else if (touchPosition.x > 0f)
@@ -107,13 +104,11 @@ public class Player : MonoBehaviour
             {
                 this.horizontal += Random.Range(0.08f, 0.15f);
                 this.horizontal = Mathf.Min(this.horizontal, 1f);
-                Debug.Log(horizontal);
             }
             else
             {
                 this.horizontal = 0;
                 this.horizontal += Random.Range(0.08f, 0.15f);
-                Debug.Log(horizontal);
             }
         }
     }
