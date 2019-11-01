@@ -3,10 +3,8 @@
 
 !.gitignore
 !/Assets/
-/Assets/*
-!/[Aa]ssets/**/*.meta
-!/Assets/Scenes
-!/Assets/Scripts
+/Assets/TextMesh Pro/*
+/Assets/**/*.png
 !/Logs/
 !/Packages/
 !/ProjectSettings/
