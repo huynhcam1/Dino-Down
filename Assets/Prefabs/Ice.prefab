@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7810199907557744475}
   - component: {fileID: 7810199907557744472}
+  - component: {fileID: 5313229353957907789}
   - component: {fileID: 7810199907557744474}
   m_Layer: 0
   m_Name: Ice
@@ -81,6 +82,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5313229353957907789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7810199907557744473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6060fae69536d0646b72b74f6f25e052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &7810199907557744474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105,5 +118,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48222223, y: 0.0077427924}
+  m_Size: {x: 0.3, y: 0.0077427924}
   m_EdgeRadius: 0

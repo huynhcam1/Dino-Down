@@ -9,8 +9,8 @@ public class ScoreManager : MonoBehaviour
     public Text score;
 
     // current score and update value
-    public float count;
-    public float pointsPerSecond;
+    public float count = 0;
+    public float pointsPerSecond = 5;
 
     // check if player still alive, freeze score if not
     public bool isAlive = true;
