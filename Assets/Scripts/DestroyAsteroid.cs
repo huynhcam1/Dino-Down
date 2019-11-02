@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/* Destroys all previously spawned platforms.
+/* Destroys all previously spawned platforms and generates new ones.
+ * Ends game if asteroid touches player.
  */
 public class DestroyAsteroid : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class DestroyAsteroid : MonoBehaviour
         transform.position = new Vector2(position.x, newY);
     }
 
+    // if player touches asteroid, notify score manager player is dead to stop score count and change scene
+    // if platform touches asteroid, generate new platforms
     private void OnTriggerEnter2D(Collider2D collison)
     {
         // ends game if player enters asteroid collider

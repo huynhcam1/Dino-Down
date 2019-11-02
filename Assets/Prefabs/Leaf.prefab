@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2673931015339862352}
   - component: {fileID: 2673931015339862353}
   - component: {fileID: 3174367374932486956}
-  - component: {fileID: 2673931015339862367}
   - component: {fileID: 2289588920143937431}
+  - component: {fileID: 2673931015339862367}
   m_Layer: 0
   m_Name: Leaf
   m_TagString: Platform
@@ -96,6 +96,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+--- !u!95 &2289588920143937431
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673931015339862354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d48fd7e78b91b64a86fb6b21e5fc5b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &2673931015339862367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,22 +141,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44141096, y: 0.013705462}
   m_EdgeRadius: 0
---- !u!95 &2289588920143937431
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2673931015339862354}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8d48fd7e78b91b64a86fb6b21e5fc5b6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

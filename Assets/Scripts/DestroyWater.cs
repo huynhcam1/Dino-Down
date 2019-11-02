@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/* Ends game if water touches player.
+ */
 public class DestroyWater : MonoBehaviour
 {
     public ScoreManager scoreManager;
@@ -18,6 +20,8 @@ public class DestroyWater : MonoBehaviour
     {
         
     }
+
+    // if player falls into water, notify score manager player is dead to stop score count and change scene
     private void OnTriggerEnter2D(Collider2D collider)
     {
         // ends game if player enters water collider
