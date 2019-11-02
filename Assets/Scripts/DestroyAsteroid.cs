@@ -17,8 +17,10 @@ public class DestroyAsteroid : MonoBehaviour
     public GameObject leafPrefab;
 
     // speed and height for moving asteroid
-    float speed = 5f;
-    float height = 0.01f;
+    float speed = 0.3f;
+
+    // camera's z position, parent position must offset with child position
+    float cameraZPosition = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +32,9 @@ public class DestroyAsteroid : MonoBehaviour
     void Update()
     {
         // moves the asteroid up and down
-        Vector2 position = transform.position;
-        float newY = Mathf.Sin(Time.time * speed) * height + position.y;
-        transform.position = new Vector2(position.x, newY);
+        Vector3 position = transform.position;
+        float y = 2.15f + Mathf.PingPong(Time.time * speed, 0.2f);
+        transform.localPosition = new Vector3(position.x, y, position.z + cameraZPosition);
     }
 
     // if player touches asteroid, notify score manager player is dead to stop score count and change scene

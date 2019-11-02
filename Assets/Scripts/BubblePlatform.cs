@@ -8,7 +8,7 @@ public class BubblePlatform : MonoBehaviour
     public Animator animator;
 
     // speed of bounce
-    public float bounceForce = 2f;
+    float bounceForce = 2f;
 
     // Start is called before the first frame update
     void Start()

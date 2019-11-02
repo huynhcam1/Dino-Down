@@ -8,7 +8,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // movement scale
-    public float movementSpeed = 1f;
+    float movementSpeed = 1f;
 
     // enables physics
     Rigidbody2D rb;
