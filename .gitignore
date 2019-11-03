@@ -3,7 +3,7 @@
 
 !.gitignore
 !/Assets/
-/Assets/TextMesh Pro/*
+/Assets/Pixel Font - Tripfive/*
 /Assets/**/*.png
 !/Logs/
 !/Packages/
