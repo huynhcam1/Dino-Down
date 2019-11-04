@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
  */
 public class DestroyAsteroid : MonoBehaviour
 {
-    public ScoreManager scoreManager;
+    public Player player;
 
     // different platforms
     public GameObject bubblePrefab;
@@ -42,7 +42,7 @@ public class DestroyAsteroid : MonoBehaviour
         // ends game if player enters asteroid collider
         if (collison.gameObject.tag == "Player")
         {
-            scoreManager.isAlive = false;
+            player.isAlive = false;
             Destroy(collison.gameObject);
             Debug.Log("game over");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
  */
 public class DestroyWater : MonoBehaviour
 {
-    public ScoreManager scoreManager;
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class DestroyWater : MonoBehaviour
         // ends game if player enters water collider
         if (collider.gameObject.tag == "Player")
         {
-            scoreManager.isAlive = false;
+            player.isAlive = false;
             Destroy(collider.gameObject);
             Debug.Log("game over");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

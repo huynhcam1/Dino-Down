@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     float movement = 0f;
     float horizontal = 0f;
 
+    // check if player still alive, freeze score if not
+    public bool isAlive = true;
+
     // Use this for initialization
     void Start()
     {

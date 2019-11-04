@@ -12,8 +12,7 @@ public class ScoreManager : MonoBehaviour
     float count = 0;
     float pointsPerSecond = 5;
 
-    // check if player still alive, freeze score if not
-    public bool isAlive = true;
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         // if character is alive, update current score (rounded)
-        if (isAlive)
+        if (player.isAlive)
         {
             count += pointsPerSecond * Time.deltaTime;
         }
