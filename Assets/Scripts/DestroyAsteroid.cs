@@ -10,6 +10,10 @@ public class DestroyAsteroid : MonoBehaviour
 {
     public Player player;
 
+    public GameObject filters;
+    public GameObject gameplayWindow;
+    public GameObject gameOverWindow;
+
     // different platforms
     public GameObject bubblePrefab;
     public GameObject groundPrefab;
@@ -45,7 +49,9 @@ public class DestroyAsteroid : MonoBehaviour
             player.isAlive = false;
             Destroy(collison.gameObject);
             Debug.Log("game over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            filters.SetActive(true);
+            gameplayWindow.SetActive(false);
+            gameOverWindow.SetActive(true);
         }
         // generate new platforms, then destroy old platform
         float x = collison.transform.position.x;

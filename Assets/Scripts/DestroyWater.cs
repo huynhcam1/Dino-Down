@@ -9,6 +9,10 @@ public class DestroyWater : MonoBehaviour
 {
     public Player player;
 
+    public GameObject filters;
+    public GameObject gameplayWindow;
+    public GameObject gameOverWindow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +34,9 @@ public class DestroyWater : MonoBehaviour
             player.isAlive = false;
             Destroy(collider.gameObject);
             Debug.Log("game over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            filters.SetActive(true);
+            gameplayWindow.SetActive(false);
+            gameOverWindow.SetActive(true);
         }
         
     }

@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     // score display
     public Text scoreText;
+    public Text finalScoreText;
     public Text highscoreText;
 
     // current score and update value
@@ -40,6 +41,7 @@ public class ScoreManager : MonoBehaviour
                 highscore = Mathf.RoundToInt(score);
                 PlayerPrefs.SetInt("highscore", highscore);
             }
+            finalScoreText.text = Mathf.Round(score).ToString();
             highscoreText.text = highscore.ToString();
         }
 
