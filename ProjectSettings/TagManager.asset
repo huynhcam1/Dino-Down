@@ -66,6 +66,9 @@ TagManager:
   - name: Background
     uniqueID: 3630188211
     locked: 0
+  - name: Players and Platforms
+    uniqueID: 659156899
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

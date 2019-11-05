@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     // score display
-    public Text score;
+    public Text scoreText;
+    public Text highscoreText;
 
     // current score and update value
-    float count = 0;
+    float score;
+    int highscore;
     float pointsPerSecond = 5;
 
     public Player player;
@@ -17,7 +19,9 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = 0;
+        highscore = PlayerPrefs.GetInt("highscore", 0);
+        highscoreText.text = highscore.ToString();
     }
 
     // Update is called once per frame
@@ -26,8 +30,19 @@ public class ScoreManager : MonoBehaviour
         // if character is alive, update current score (rounded)
         if (player.isAlive)
         {
-            count += pointsPerSecond * Time.deltaTime;
+            score += pointsPerSecond * Time.deltaTime;
+            scoreText.text = Mathf.Round(score).ToString();
         }
-        score.text = Mathf.Round(count).ToString();
+        else
+        {
+            if (Mathf.RoundToInt(score) > highscore)
+            {
+                highscore = Mathf.RoundToInt(score);
+                PlayerPrefs.SetInt("highscore", highscore);
+            }
+            highscoreText.text = highscore.ToString();
+        }
+
+        
     }
 }

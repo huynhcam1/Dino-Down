@@ -45,7 +45,7 @@ public class DestroyAsteroid : MonoBehaviour
             player.isAlive = false;
             Destroy(collison.gameObject);
             Debug.Log("game over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         // generate new platforms, then destroy old platform
         float x = collison.transform.position.x;

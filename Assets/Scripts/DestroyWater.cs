@@ -30,7 +30,7 @@ public class DestroyWater : MonoBehaviour
             player.isAlive = false;
             Destroy(collider.gameObject);
             Debug.Log("game over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
     }

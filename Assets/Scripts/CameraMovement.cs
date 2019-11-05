@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour
     // camera movement speed
     public float speed = 1f;
     // camera acceleration
-    public float acceleration = 0.0002f;
+    public float acceleration = 0.0003f;
     // Start is called before the first frame update
     void Start()
     {

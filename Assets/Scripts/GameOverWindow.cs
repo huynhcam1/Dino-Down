@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameOverMenu : MonoBehaviour
+public class GameOverWindow : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +15,5 @@ public class GameOverMenu : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void TryAgain()
-    {
-        // go to previous scene (game scene)
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
