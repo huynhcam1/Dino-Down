@@ -6,6 +6,8 @@
 /Assets/ML-Agents/*
 /Assets/Pixel Font - Tripfive/*
 /Assets/**/*.png
+!/Assets/Dinos/Icon/DinoIcon.png
+!
 !/Logs/
 !/Packages/
 !/ProjectSettings/
