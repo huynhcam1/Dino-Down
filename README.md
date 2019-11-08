@@ -1,4 +1,6 @@
 # Dino-Down
+<img src="/Assets/Dinos/Icon/DinoIcon.PNG" width="75px">
+2D platformer game inspired by Bouncedown.
 
 # Screenshots (game still in progress)
 <img src="/Screenshots/MainMenu.png" width="250px"> <img src="/Screenshots/Gameplay.png" width="250px"> <img src="/Screenshots/GameOver.png" width="250px">
