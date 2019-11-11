@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 /* Ends game if water touches player.
  */
@@ -13,6 +10,8 @@ public class DestroyWater : MonoBehaviour
     public GameObject gameplayWindow;
     public GameObject gameOverWindow;
 
+    float speed = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +21,11 @@ public class DestroyWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.x >= 1.772f)
+        {
+            transform.position = new Vector2(-1.376f, transform.position.y);
+        }
+        transform.Translate(Vector2.right * Time.deltaTime * speed);
     }
 
     // if player falls into water, notify score manager player is dead to stop score count and change scene

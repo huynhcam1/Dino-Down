@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 /* Destroys all previously spawned platforms and generates new ones.
  * Ends game if asteroid touches player.
