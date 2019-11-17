@@ -2,8 +2,11 @@
 <img src="/Assets/Dinos/Icon/DinoIcon.PNG" width="75px">
 2D platformer game inspired by Bouncedown.
 
-# Screenshots (game still in progress)
+# Screenshots
 <img src="/Screenshots/MainMenu.png" width="250px"> <img src="/Screenshots/Gameplay.png" width="250px"> <img src="/Screenshots/GameOver.png" width="250px">
+
+# Installation
+<a href='https://play.google.com/store/apps/details?id=com.DinoDown.DinoDown&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height="80"/></a>
 
 # Credits
 Dino Characters by [Arks](https://arks.itch.io/dino-characters)
